@@ -4,103 +4,173 @@
 <title>Anjeet Yadav | Data Analyst</title>
 
 <style>
+
 body{
 font-family: Arial;
-margin:40px;
-background:#f4f6f8;
-color:#333;
+margin:0;
+background:#0f172a;
+color:white;
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+background:#1e293b;
 }
 
 h1{
-color:#2c3e50;
+font-size:45px;
+margin-bottom:10px;
 }
 
-.section{
-margin-top:40px;
+button{
+padding:10px 20px;
+margin:10px;
+border:none;
+border-radius:5px;
+background:#38bdf8;
+cursor:pointer;
+}
+
+section{
+padding:60px 10%;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
 .card{
-background:white;
+background:#1e293b;
 padding:20px;
-margin-top:15px;
+border-radius:10px;
+}
+
+.card img{
+width:100%;
 border-radius:8px;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+}
+
+.skill{
+background:#1e293b;
+padding:15px;
+text-align:center;
+border-radius:8px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
 }
 
 a{
-color:#0073e6;
+color:#38bdf8;
 text-decoration:none;
 }
-</style>
 
+</style>
 </head>
+
 
 <body>
 
+<header>
+
 <h1>Anjeet Yadav</h1>
 
-<p>
-Data Analyst | SQL | Python | Power BI | Tableau
-</p>
+<p>Data Analyst | SQL | Python | Power BI | Tableau</p>
 
-<p>
-📍 Bengaluru, India  
-📧 anjeetyadav887@gmail.com  
-🔗 <a href="https://github.com/anjeetyadav">GitHub</a> |
-<a href="https://linkedin.com/in/anjeet-yadav-573970227">LinkedIn</a>
-</p>
+<p>Bengaluru, India</p>
 
-<div class="section">
+<button onclick="location.href='#projects'">View Projects</button>
+
+<button onclick="window.open('AnjeetYadav_resume.pdf')">
+Download Resume
+</button>
+
+</header>
+
+
+
+<section>
+
 <h2>About Me</h2>
 
-<div class="card">
 <p>
-Data Analyst with strong skills in SQL, Python, Excel, Power BI, and Tableau. 
-Experienced in data cleaning, exploratory data analysis, dashboard development, 
-and deriving insights to support business decisions. Certified by Google, Microsoft, Deloitte, and Oracle.
+Data Analyst skilled in SQL, Python, Excel, Power BI, and Tableau.
+Experienced in data cleaning, exploratory data analysis, dashboard
+development, and deriving insights to support business decisions.
+Certified by Google, Microsoft, Deloitte, and Oracle.
 </p>
+
+</section>
+
+
+
+<section>
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">SQL</div>
+<div class="skill">Python</div>
+<div class="skill">Power BI</div>
+<div class="skill">Tableau</div>
+<div class="skill">Excel</div>
+<div class="skill">Statistics</div>
+<div class="skill">Machine Learning</div>
+<div class="skill">GitHub</div>
+
 </div>
-</div>
+
+</section>
 
 
-<div class="section">
-<h2>Technical Skills</h2>
 
-<div class="card">
-<b>Programming:</b> Python, SQL<br><br>
+<section id="projects">
 
-<b>Data Analysis:</b> Data Cleaning, EDA, Statistics, Hypothesis Testing<br><br>
-
-<b>Visualization:</b> Power BI, Tableau, Advanced Excel, DAX<br><br>
-
-<b>Machine Learning:</b> Regression, Classification, Clustering<br><br>
-
-<b>Tools:</b> Git, GitHub
-</div>
-
-</div>
-
-
-<div class="section">
 <h2>Projects</h2>
 
+<div class="projects">
+
 <div class="card">
+
+<img src="sales-dashboard.png">
+
 <h3>Customer Sales Analytics Dashboard</h3>
 
 <p>
-Analyzed 5,000+ sales records to identify revenue drivers and profit gaps.
-Used SQL joins and aggregations to structure raw transactional data and built a Power BI dashboard.
+Analyzed 5000+ sales records to identify revenue drivers,
+customer segments, and profit gaps using SQL and Power BI.
 </p>
+
+<a href="https://github.com/anjeetyadav">
+View Code
+</a>
 
 </div>
 
 
+
 <div class="card">
+
+<img src="student-dashboard.png">
+
 <h3>Student Productivity Dashboard</h3>
 
 <p>
-Analyzed student attendance and performance data to identify productivity trends.
-Built KPI dashboards using Power BI for performance tracking.
+Analyzed attendance and performance data to identify
+productivity trends and build KPI dashboards.
 </p>
 
 <a href="https://github.com/anjeetyadav/student-productivity-dashboard">
@@ -109,70 +179,85 @@ View Project
 
 </div>
 
+
+
+<div class="card">
+
+<img src="amazon-analysis.png">
+
+<h3>Amazon Product Analysis</h3>
+
+<p>
+Performed exploratory data analysis on Amazon product
+ratings and pricing data to identify category trends.
+</p>
+
+<a href="https://github.com/anjeetyadav">
+View Code
+</a>
+
 </div>
 
+</div>
 
-<div class="section">
+</section>
+
+
+
+<section>
+
 <h2>Experience</h2>
 
-<div class="card">
-
-<h3>Customer Experience Associate – Alorica</h3>
+<p><b>Customer Experience Associate – Alorica</b></p>
 
 <p>
-Analyzed operational metrics such as AHT, concessions, delivery time, and return rates
-to identify trends and improve service quality. Generated insights and dashboards
-to improve operational efficiency and customer satisfaction.
+Analyzed operational metrics including AHT, concessions,
+delivery time, and return rates to identify trends and
+improve service quality.
 </p>
 
-</div>
+<br>
 
-
-<div class="card">
-
-<h3>Data Analyst Intern – Eesasssin Technologies</h3>
+<p><b>Data Analyst Intern – Eesasssin Technologies</b></p>
 
 <p>
-Analyzed business and sales data using SQL and Excel.
-Built Power BI dashboards to support management decisions and highlight growth opportunities.
+Analyzed sales and business data using SQL and Excel
+and built Power BI dashboards to support management decisions.
 </p>
 
-</div>
-
-</div>
+</section>
 
 
-<div class="section">
+
+<section>
+
 <h2>Certifications</h2>
 
-<div class="card">
+<ul>
 
-Google Data Analytics Certification<br><br>
+<li>Google Data Analytics Certification</li>
+<li>Microsoft Power BI Certification</li>
+<li>Deloitte Tableau Certification</li>
+<li>Oracle Machine Learning Certification</li>
+<li>HackerRank SQL – 5★</li>
 
-Microsoft Power BI Certification<br><br>
+</ul>
 
-Deloitte Tableau Certification<br><br>
-
-Oracle Machine Learning Certification<br><br>
-
-HackerRank SQL – 5⭐
-
-</div>
-
-</div>
+</section>
 
 
-<div class="section">
-<h2>Education</h2>
 
-<div class="card">
+<footer>
 
-B.Tech – Electronics and Communication Engineering<br>
-JSS Academy of Technical Education, Noida
+<p>
 
-</div>
+<a href="mailto:anjeetyadav887@gmail.com">Email</a> |
+<a href="https://linkedin.com/in/anjeet-yadav-573970227">LinkedIn</a> |
+<a href="https://github.com/anjeetyadav">GitHub</a>
 
-</div>
+</p>
+
+</footer>
 
 </body>
 </html>
