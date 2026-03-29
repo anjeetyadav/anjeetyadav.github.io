@@ -1,217 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Anjeet Yadav | Data Analyst</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anjeet Yadav | Data Analyst Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    /* General Reset */
+    * {
       margin: 0;
-      font-family: Arial;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
       background: radial-gradient(circle at top, #0f172a, #020617);
-      color: white;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     section {
       padding: 70px 5%;
     }
 
-    h1 { font-size: 50px; }
-    h2 { text-align: center; margin-bottom: 40px; }
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
 
-    p { color: #94a3b8; }
+    h1 {
+      font-size: 50px;
+      color: #00f7ff;
+    }
 
-    /* HERO */
-    .hero {
+    h2 {
+      font-size: 36px;
+      color: #00e676;
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #ffea00;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      padding: 15px 5%;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav a {
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00f7ff;
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at center, #0f172a, #020617);
     }
 
-    .hero img {
-      width: 260px;
+    #hero img {
+      width: 150px;
       border-radius: 50%;
-      box-shadow: 0 0 30px #38bdf8;
+      margin-bottom: 20px;
+      border: 3px solid #00f7ff;
     }
 
-    /* BUTTON */
-    .btn {
-      padding: 12px 22px;
-      margin: 8px;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.3s;
+    #hero p {
+      font-size: 20px;
+      color: #fff;
     }
 
-    .btn-primary {
-      background: #38bdf8;
-      color: black;
+    /* Sections */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
     }
 
-    .btn-outline {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #38bdf8;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
     .card {
-      background: #020617;
+      background: #111827;
       padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #1e293b;
-      transition: 0.3s;
+      border-radius: 15px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px #38bdf8;
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
     }
 
-    /* LOGOS */
-    .logos img {
-      width: 120px;
-      margin: 20px;
-      filter: grayscale(100%);
-      transition: 0.3s;
+    .card img {
+      width: 80px;
+      margin-bottom: 15px;
     }
 
-    .logos img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.1);
+    /* Projects */
+    .project a {
+      color: #00e676;
+      font-weight: 600;
     }
 
-    .center { text-align: center; }
+    /* Contact */
+    #contact a {
+      display: inline-block;
+      margin: 10px 20px;
+      color: #00f7ff;
+      border: 2px solid #00f7ff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
 
-    /* DATA BACKGROUND */
-    .data-bg {
-      background-image: linear-gradient(rgba(56,189,248,0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(56,189,248,0.1) 1px, transparent 1px);
-      background-size: 40px 40px;
+    #contact a:hover {
+      background: #00f7ff;
+      color: #000;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero data-bg">
-  <div>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><a href="#hero">Anjeet Yadav</a></div>
+    <div class="nav-links">
+      <a href="#certifications">Certifications</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://anjeetyadav.github.io/resume.pdf" target="_blank">Resume</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/profile.jpg" alt="Anjeet Yadav">
     <h1>Anjeet Yadav</h1>
-    <h3>Data Analyst | SQL | Power BI | Python</h3>
-    <p>
-      B.Tech (ECE) | JSS Academy of Technical Education <br>
-      Turning data into business decisions using analytics & dashboards.
-    </p>
+    <p>Data Analyst | AI & Machine Learning Enthusiast | Power BI & Tableau Certified</p>
+  </section>
 
-    <a href="AnjeetYadav_resume.pdf" target="_blank" class="btn btn-primary">Download Resume</a>
-    <a href="https://github.com/anjeetyadav" target="_blank" class="btn btn-outline">GitHub</a>
-    <a href="https://www.linkedin.com/in/anjeet-yadav-573970227/" target="_blank" class="btn btn-outline">LinkedIn</a>
-  </div>
-
-  <img src="https://i.pravatar.cc/300">
-</section>
-
-<!-- IMPACT -->
-<section>
-  <h2>Impact</h2>
-  <div class="grid">
-    <div class="card">10K+ Data Rows Analyzed</div>
-    <div class="card">KPI: AHT, CSAT, RAP</div>
-    <div class="card">Dashboard Driven Insights</div>
-    <div class="card">Customer Behavior Analysis</div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="data-bg">
-  <h2>Projects</h2>
-  <div class="grid">
-
-    <div class="card">
-      <h3>RFM Customer Segmentation</h3>
-      <p>K-Means clustering to identify high-value customers</p>
-      <a href="https://github.com/anjeetyadav/ecommerce-sales-analytics" target="_blank">View Project</a>
+  <!-- Certifications Section -->
+  <section id="certifications">
+    <div class="section-title">
+      <h2>Certifications</h2>
     </div>
-
-    <div class="card">
-      <h3>Sales Dashboard</h3>
-      <p>Power BI dashboard for revenue insights</p>
+    <div class="cards">
+      <div class="card">
+        <a href="https://www.microsoft.com/en-us/learning/power-bi.aspx" target="_blank">
+          <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/powerbi.png" alt="Power BI Certificate">
+          <h3>Power BI - Microsoft</h3>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://www.deloitte.com/tableau-certificate" target="_blank">
+          <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/tableau.png" alt="Tableau Certificate">
+          <h3>Tableau - Deloitte</h3>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://learning.oracle.com/machine-learning" target="_blank">
+          <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/ml.png" alt="ML Certificate">
+          <h3>Machine Learning - Oracle</h3>
+        </a>
+      </div>
+      <div class="card">
+        <a href="https://analytics.google.com/certifications/data-analysis" target="_blank">
+          <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/google.png" alt="Google Data Analytics">
+          <h3>Data Analysis - Google</h3>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Amazon Product Analysis</h3>
-      <p>Python + SQL analysis</p>
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="section-title">
+      <h2>Experience</h2>
     </div>
-
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-  <h2>Experience</h2>
-  <div class="grid">
-    <div class="card center">
-      <img src="./Images/alorica.png">
-      <h3>Alorica</h3>
-      <p>
-        Customer Experience Analyst <br>
-        Worked on KPIs like AHT, CSAT, and customer insights.
-      </p>
+    <div class="cards">
+      <div class="card">
+        <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/alorica.png" alt="Alorica">
+        <h3>Alorica</h3>
+        <p>Customer Experience Analyst | Dashboard & Data Metrics Optimization (CCXU, AHT, RAP)</p>
+      </div>
+      <div class="card">
+        <img src="https://github.com/anjeetyadav/anjeetyadav.github.io/raw/main/assets/amazon.png" alt="Amazon">
+        <h3>Amazon</h3>
+        <p>Process Analyst | Data-Driven Insights & Efficiency Metrics</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CERTIFICATIONS -->
-<section class="data-bg">
-  <h2>Certifications</h2>
-  <div class="grid center">
-
-    <div class="card">
-      <img src="./Images/Google.png">
-      <p>Google Data Analytics</p>
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects</h2>
     </div>
-
-    <div class="card">
-      <img src="./Images/microsoft.png">
-      <p>Power BI Certification</p>
+    <div class="cards">
+      <div class="card project">
+        <h3><a href="https://github.com/anjeetyadav/Customer-Sales-Analytics" target="_blank">Customer Sales Analytics Dashboard</a></h3>
+      </div>
+      <div class="card project">
+        <h3><a href="https://github.com/anjeetyadav/Student-Productivity-Dashboard" target="_blank">Student Productivity Dashboard</a></h3>
+      </div>
+      <div class="card project">
+        <h3><a href="https://github.com/anjeetyadav/Amazon-Product-Analysis" target="_blank">Amazon Product Analysis Project</a></h3>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="./Images/deloitte.png">
-      <p>Tableau Certification</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact Me</h2>
     </div>
-
-    <div class="card">
-      <img src="./Images/oracle.png">
-      <p>Machine Learning</p>
+    <div style="text-align:center;">
+      <a href="mailto:anjeet.yadav@example.com">Email</a>
+      <a href="tel:+919876543210">Phone</a>
+      <a href="https://www.linkedin.com/in/anjeetyadav/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/anjeetyadav" target="_blank">GitHub</a>
+      <a href="https://www.hackerrank.com/anjeetyadav" target="_blank">HackerRank</a>
     </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="center data-bg">
-  <h2>Contact</h2>
-<p>📧 Email: <a href="mailto:anjeetyadav887@email.com">anjeetyadav887@email.com</a></p>
-<p>📞 Phone: <a href="tel:+917355073272">+91 7355073272</a></p>
-  <p>Location: Bengaluru, India</p>
-
-  <a href="https://github.com/anjeetyadav" target="_blank" class="btn btn-outline">GitHub</a>
-  <a href="#" class="btn btn-outline">LinkedIn</a>
-  <a href="https://www.hackerrank.com/profile/anjeetyadav887" target="_blank" class="btn btn-outline">HackerRank</a>
-</section>
+  </section>
 
 </body>
 </html>
