@@ -7,28 +7,28 @@
     body {
       margin: 0;
       font-family: Arial;
-      background: linear-gradient(to right, #0f172a, #1e293b);
       color: white;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+      background: radial-gradient(circle at top, #0f172a, #020617);
     }
 
     section {
-      padding: 60px 0;
+      padding: 80px 5%;
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 50px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     p {
-      color: #cbd5e1;
+      color: #94a3b8;
     }
 
+    /* HERO */
     .hero {
       display: flex;
       align-items: center;
@@ -41,18 +41,19 @@
     }
 
     .hero img {
-      width: 250px;
+      width: 280px;
       border-radius: 50%;
-      box-shadow: 0 0 20px #38bdf8;
+      box-shadow: 0 0 30px #38bdf8;
     }
 
+    /* BUTTONS */
     .btn {
-      padding: 10px 20px;
+      padding: 12px 24px;
       margin: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
+      border-radius: 8px;
       text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
     }
 
     .btn-primary {
@@ -74,22 +75,49 @@
       color: black;
     }
 
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 25px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
+      background: #020617;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #38bdf8;
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px #38bdf8;
+    }
+
+    /* COMPANIES */
+    .companies {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      opacity: 0.7;
+    }
+
+    .companies img {
+      width: 120px;
+      margin: 20px;
+      filter: grayscale(100%);
+    }
+
+    .companies img:hover {
+      filter: grayscale(0%);
+    }
+
+    /* DATA VISUAL BG EFFECT */
+    .data-bg {
+      background-image: linear-gradient(rgba(56,189,248,0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(56,189,248,0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
     .center {
@@ -100,16 +128,14 @@
 
 <body>
 
-<div class="container">
-
 <!-- HERO -->
-<section class="hero">
+<section class="hero data-bg">
   <div class="hero-text">
-    <h1>Hi, I'm Anjeet Yadav</h1>
+    <h1>Anjeet Yadav</h1>
     <h3>Data Analyst | SQL | Power BI | Python</h3>
     <p>
-      I transform raw data into actionable insights. 
-      Experienced in building dashboards and analyzing KPIs like AHT, CSAT, and revenue.
+      B.Tech (ECE) | JSS Academy of Technical Education, Noida <br><br>
+      I analyze data to improve business performance using dashboards, KPIs, and insights.
     </p>
 
     <a href="#" class="btn btn-primary">Download Resume</a>
@@ -117,50 +143,71 @@
     <a href="#" class="btn btn-outline">LinkedIn</a>
   </div>
 
-  <img src="https://via.placeholder.com/250" alt="Profile Photo">
+  <img src="https://via.placeholder.com/280" alt="Your Photo">
 </section>
 
 <!-- IMPACT -->
-<section class="center">
-  <h2>Impact & Achievements</h2>
+<section>
+  <h2>Impact</h2>
   <div class="grid">
-    <div class="card">Analyzed 10K+ rows of data</div>
-    <div class="card">Built KPI dashboards (AHT, CSAT)</div>
-    <div class="card">Improved business decisions</div>
+    <div class="card">10K+ Rows Analyzed</div>
+    <div class="card">KPIs: AHT, CSAT, RAP</div>
+    <div class="card">Dashboard Driven Decisions</div>
+    <div class="card">Customer Behavior Insights</div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section>
+<section class="data-bg">
   <h2>Projects</h2>
   <div class="grid">
 
     <div class="card">
-      <h3>Customer Segmentation</h3>
-      <p>RFM + K-Means clustering for high-value customers</p>
-      <a href="https://github.com/anjeetyadav/ecommerce-sales-analytics" target="_blank" class="btn btn-primary">View</a>
+      <h3>RFM Customer Segmentation</h3>
+      <p>K-Means clustering to identify high-value customers</p>
     </div>
 
     <div class="card">
       <h3>Sales Dashboard</h3>
-      <p>Power BI dashboard for revenue insights</p>
+      <p>Power BI dashboard for revenue trends</p>
     </div>
 
     <div class="card">
-      <h3>Amazon Analysis</h3>
-      <p>Python + SQL analysis</p>
+      <h3>Amazon Product Analysis</h3>
+      <p>SQL + Python insights for pricing & trends</p>
     </div>
 
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section>
+  <h2>Target Companies</h2>
+  <div class="companies">
+    <img src="https://logo.clearbit.com/google.com">
+    <img src="https://logo.clearbit.com/microsoft.com">
+    <img src="https://logo.clearbit.com/jpmorganchase.com">
+    <img src="https://logo.clearbit.com/deloitte.com">
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="data-bg">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>Customer Experience Analyst - Alorica</h3>
+    <p>
+      Worked on customer data and KPIs like AHT, CSAT.
+      Identified patterns to improve service efficiency and decision-making.
+    </p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="center">
   <h2>Let's Connect</h2>
-  <p>Email: anjeetyadav887@gmail.com</p>
+  <p>Email: your-email@gmail.com</p>
 </section>
-
-</div>
 
 </body>
 </html>
