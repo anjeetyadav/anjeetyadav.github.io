@@ -7,53 +7,41 @@
     body {
       margin: 0;
       font-family: Arial;
-      color: white;
       background: radial-gradient(circle at top, #0f172a, #020617);
+      color: white;
     }
 
     section {
-      padding: 80px 5%;
+      padding: 70px 5%;
     }
 
-    h1 {
-      font-size: 50px;
-    }
+    h1 { font-size: 50px; }
+    h2 { text-align: center; margin-bottom: 40px; }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    p {
-      color: #94a3b8;
-    }
+    p { color: #94a3b8; }
 
     /* HERO */
     .hero {
       display: flex;
-      align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-    }
-
-    .hero-text {
-      max-width: 600px;
+      align-items: center;
     }
 
     .hero img {
-      width: 280px;
+      width: 260px;
       border-radius: 50%;
       box-shadow: 0 0 30px #38bdf8;
     }
 
-    /* BUTTONS */
+    /* BUTTON */
     .btn {
-      padding: 12px 24px;
-      margin: 10px;
+      padding: 12px 22px;
+      margin: 8px;
       border-radius: 8px;
       text-decoration: none;
-      transition: 0.3s;
       display: inline-block;
+      transition: 0.3s;
     }
 
     .btn-primary {
@@ -61,67 +49,56 @@
       color: black;
     }
 
-    .btn-primary:hover {
-      background: #0ea5e9;
-    }
-
     .btn-outline {
       border: 1px solid #38bdf8;
       color: #38bdf8;
     }
 
-    .btn-outline:hover {
-      background: #38bdf8;
-      color: black;
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #38bdf8;
     }
 
     /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      gap: 20px;
     }
 
     .card {
       background: #020617;
-      padding: 25px;
+      padding: 20px;
       border-radius: 12px;
       border: 1px solid #1e293b;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       box-shadow: 0 0 20px #38bdf8;
     }
 
-    /* COMPANIES */
-    .companies {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      opacity: 0.7;
-    }
-
-    .companies img {
+    /* LOGOS */
+    .logos img {
       width: 120px;
       margin: 20px;
       filter: grayscale(100%);
+      transition: 0.3s;
     }
 
-    .companies img:hover {
+    .logos img:hover {
       filter: grayscale(0%);
+      transform: scale(1.1);
     }
 
-    /* DATA VISUAL BG EFFECT */
+    .center { text-align: center; }
+
+    /* DATA BACKGROUND */
     .data-bg {
       background-image: linear-gradient(rgba(56,189,248,0.1) 1px, transparent 1px),
                         linear-gradient(90deg, rgba(56,189,248,0.1) 1px, transparent 1px);
       background-size: 40px 40px;
-    }
-
-    .center {
-      text-align: center;
     }
   </style>
 </head>
@@ -130,12 +107,12 @@
 
 <!-- HERO -->
 <section class="hero data-bg">
-  <div class="hero-text">
+  <div>
     <h1>Anjeet Yadav</h1>
     <h3>Data Analyst | SQL | Power BI | Python</h3>
     <p>
-      B.Tech (ECE) | JSS Academy of Technical Education, Noida <br><br>
-      I analyze data to improve business performance using dashboards, KPIs, and insights.
+      B.Tech (ECE) | JSS Academy of Technical Education <br>
+      Turning data into business decisions using analytics & dashboards.
     </p>
 
     <a href="#" class="btn btn-primary">Download Resume</a>
@@ -143,17 +120,17 @@
     <a href="#" class="btn btn-outline">LinkedIn</a>
   </div>
 
-  <img src="https://via.placeholder.com/280" alt="Your Photo">
+  <img src="https://i.pravatar.cc/300">
 </section>
 
 <!-- IMPACT -->
 <section>
   <h2>Impact</h2>
   <div class="grid">
-    <div class="card">10K+ Rows Analyzed</div>
-    <div class="card">KPIs: AHT, CSAT, RAP</div>
-    <div class="card">Dashboard Driven Decisions</div>
-    <div class="card">Customer Behavior Insights</div>
+    <div class="card">10K+ Data Rows Analyzed</div>
+    <div class="card">KPI: AHT, CSAT, RAP</div>
+    <div class="card">Dashboard Driven Insights</div>
+    <div class="card">Customer Behavior Analysis</div>
   </div>
 </section>
 
@@ -165,25 +142,69 @@
     <div class="card">
       <h3>RFM Customer Segmentation</h3>
       <p>K-Means clustering to identify high-value customers</p>
+      <a href="https://github.com/anjeetyadav/ecommerce-sales-analytics" target="_blank">View Project</a>
     </div>
 
     <div class="card">
       <h3>Sales Dashboard</h3>
-      <p>Power BI dashboard for revenue trends</p>
+      <p>Power BI dashboard for revenue insights</p>
     </div>
 
     <div class="card">
       <h3>Amazon Product Analysis</h3>
-      <p>SQL + Python insights for pricing & trends</p>
+      <p>Python + SQL analysis</p>
     </div>
 
   </div>
 </section>
 
-<!-- COMPANIES -->
+<!-- EXPERIENCE -->
+<section>
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card center">
+      <img src="https://logo.clearbit.com/alorica.com">
+      <h3>Alorica</h3>
+      <p>
+        Customer Experience Analyst <br>
+        Worked on KPIs like AHT, CSAT, and customer insights.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="data-bg">
+  <h2>Certifications</h2>
+  <div class="grid center">
+
+    <div class="card">
+      <img src="https://logo.clearbit.com/google.com">
+      <p>Google Data Analytics</p>
+    </div>
+
+    <div class="card">
+      <img src="https://logo.clearbit.com/microsoft.com">
+      <p>Power BI Certification</p>
+    </div>
+
+    <div class="card">
+      <img src="https://logo.clearbit.com/deloitte.com">
+      <p>Tableau Certification</p>
+    </div>
+
+    <div class="card">
+      <img src="https://logo.clearbit.com/oracle.com">
+      <p>Machine Learning</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TARGET COMPANIES -->
 <section>
   <h2>Target Companies</h2>
-  <div class="companies">
+  <div class="logos center">
     <img src="https://logo.clearbit.com/google.com">
     <img src="https://logo.clearbit.com/microsoft.com">
     <img src="https://logo.clearbit.com/jpmorganchase.com">
@@ -191,22 +212,16 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="data-bg">
-  <h2>Experience</h2>
-  <div class="card">
-    <h3>Customer Experience Analyst - Alorica</h3>
-    <p>
-      Worked on customer data and KPIs like AHT, CSAT.
-      Identified patterns to improve service efficiency and decision-making.
-    </p>
-  </div>
-</section>
-
 <!-- CONTACT -->
-<section class="center">
-  <h2>Let's Connect</h2>
-  <p>Email: your-email@gmail.com</p>
+<section class="center data-bg">
+  <h2>Contact</h2>
+  <p>Email: anjeetyadav887@gmail.com</p>
+  <p>Phone: 7355073272</p>
+  <p>Location: Bengaluru, India</p>
+
+  <a href="https://github.com/anjeetyadav" target="_blank" class="btn btn-outline">GitHub</a>
+  <a href="#" class="btn btn-outline">LinkedIn</a>
+  <a href="https://www.hackerrank.com/" target="_blank" class="btn btn-outline">HackerRank</a>
 </section>
 
 </body>
