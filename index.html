@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Anjeet Yadav Portfolio</title>
+  <title>Anjeet Yadav | Data Analyst</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial;
       background: #0f172a;
       color: white;
-      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
     }
 
     section {
-      padding: 40px;
+      padding: 60px 0;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5e1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .card {
       background: #1e293b;
       padding: 20px;
-      margin: 10px;
       border-radius: 10px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
     }
 
     button {
       padding: 10px 20px;
-      border: none;
       border-radius: 5px;
-      margin: 10px;
       cursor: pointer;
+      margin: 10px;
     }
 
     .btn-white {
       background: white;
       color: black;
+      border: none;
     }
 
     .btn-outline {
@@ -46,65 +59,121 @@
       background: transparent;
       color: white;
     }
+
+    .hero {
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
 
-<section>
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
   <h1>Hi, I'm Anjeet Yadav</h1>
-  <p>Data Analyst | Driving Business Decisions with Data</p>
+  <h3>Data Analyst | SQL | Power BI | Python</h3>
   <p>
-    Data Analyst skilled in SQL, Python, and Power BI. 
-    I build dashboards and analyze KPIs like AHT, CSAT, and revenue.
+    Data Analyst with hands-on experience in analyzing business data and building dashboards.
+    I specialize in transforming raw data into actionable insights to improve KPIs like AHT, CSAT, and revenue performance.
   </p>
 
   <button class="btn-white">Download Resume</button>
   <button class="btn-outline">Contact Me</button>
 </section>
 
-<section>
+<!-- IMPACT -->
+<section class="center">
   <h2>Impact & Achievements</h2>
   <div class="grid">
-    <div class="card">Analyzed 10K+ rows of data</div>
-    <div class="card">Built KPI dashboards (AHT, CSAT)</div>
-    <div class="card">Improved decision-making</div>
+    <div class="card">Analyzed 10K+ rows of customer data</div>
+    <div class="card">Built KPI dashboards (AHT, CSAT, RAP)</div>
+    <div class="card">Improved decision-making using insights</div>
   </div>
 </section>
 
+<!-- SKILLS -->
+<section>
+  <h2>Skills & Tools</h2>
+  <div class="grid">
+    <div class="card">SQL (Joins, CTEs, Window Functions)</div>
+    <div class="card">Python (Pandas, NumPy)</div>
+    <div class="card">Power BI (DAX, Dashboards)</div>
+    <div class="card">Tableau</div>
+    <div class="card">Advanced Excel</div>
+    <div class="card">Data Cleaning</div>
+    <div class="card">Data Visualization</div>
+    <div class="card">Git & GitHub</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
 <section>
   <h2>Projects</h2>
   <div class="grid">
+
     <div class="card">
-      <h3>Customer Segmentation</h3>
-      <p>RFM + K-Means clustering</p>
-      <a href="https://github.com/anjeetyadav/ecommerce-sales-analytics">View</a>
+      <h3>E-Commerce Customer Segmentation</h3>
+      <p>
+        Performed RFM analysis and K-Means clustering to identify high-value customers.
+        Helped in targeting top revenue-generating segments.
+      </p>
+      <a href="https://github.com/anjeetyadav/ecommerce-sales-analytics" target="_blank">View Project</a>
     </div>
 
     <div class="card">
-      <h3>Sales Dashboard</h3>
-      <p>Power BI insights</p>
+      <h3>Customer Sales Dashboard</h3>
+      <p>
+        Built Power BI dashboard analyzing sales trends, top customers, and revenue insights.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Amazon Analysis</h3>
-      <p>Python + SQL analysis</p>
+      <h3>Amazon Product Analysis</h3>
+      <p>
+        Used Python and SQL to analyze product performance, pricing trends, and customer behavior.
+      </p>
     </div>
+
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section>
   <h2>Experience</h2>
   <div class="card">
-    Customer Experience Analyst - Alorica <br><br>
-    Worked on KPIs like AHT, CSAT and analyzed customer data.
+    <h3>Customer Experience Analyst - Alorica</h3>
+    <p>
+      Analyzed real-time customer interaction data and KPIs such as AHT, CSAT, and resolution time.
+      Created insights to improve operational efficiency and customer satisfaction.
+    </p>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
 <section>
+  <h2>Certifications</h2>
+  <div class="grid">
+    <div class="card">Google Data Analytics</div>
+    <div class="card">Microsoft Power BI</div>
+    <div class="card">Deloitte Tableau</div>
+    <div class="card">Oracle Machine Learning</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="center">
   <h2>Let's Connect</h2>
   <p>Open to Data Analyst roles</p>
+  <p>Email: your-email@gmail.com</p>
 </section>
+
+</div>
 
 </body>
 </html>
