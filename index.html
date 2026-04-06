@@ -152,34 +152,48 @@
     position: relative;
   }
   .photo-wrap {
-    position: relative; width: 360px; height: 420px;
+    position: relative; width: 320px;
   }
-  .photo-bg {
-    position: absolute; inset: 12px 0 0 12px;
-    background: var(--accent-light); border-radius: 20px;
+  .photo-label-strip {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px; padding: 0 2px;
+  }
+  .photo-label-role {
+    font-family: var(--serif); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+  }
+  .photo-label-loc {
+    font-size: 0.73rem; color: var(--ink-light); letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .photo-label-loc::before {
+    content: ''; display: inline-block; width: 5px; height: 5px;
+    border-radius: 50%; background: var(--accent-mid);
   }
   .photo-frame {
-    position: absolute; inset: 0 12px 12px 0;
-    background: var(--border); border-radius: 20px; overflow: hidden;
+    width: 100%; aspect-ratio: 3/4;
+    border-radius: 18px; overflow: hidden;
     border: 1px solid var(--border-strong);
+    position: relative;
   }
   .photo-frame img {
     width: 100%; height: 100%; object-fit: cover; object-position: top;
   }
-  .photo-badge {
-    position: absolute; bottom: -12px; left: -16px;
-    background: var(--bg-card); border: 1px solid var(--border-strong);
-    border-radius: var(--radius); padding: 0.7rem 1rem;
-    box-shadow: var(--shadow); display: flex; align-items: center; gap: 8px;
+  .photo-frame-accent {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(to top, rgba(10,30,20,0.6) 0%, transparent 100%);
+    pointer-events: none;
   }
-  .badge-icon {
-    width: 36px; height: 36px; background: var(--accent-light);
-    border-radius: 8px; display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
+  .photo-skills-row {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-top: 14px; justify-content: center;
   }
-  .badge-text { font-size: 0.8rem; }
-  .badge-text strong { display: block; font-weight: 600; color: var(--ink); font-size: 0.85rem; }
-  .badge-text span { color: var(--ink-muted); }
+  .photo-skill-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.04em;
+    padding: 4px 13px; border-radius: 20px;
+    background: var(--accent-light); color: var(--accent);
+    border: 1px solid rgba(26,107,74,0.18);
+  }
 
   /* ── SECTION COMMON ── */
   section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 5rem); }
@@ -521,7 +535,7 @@
     </p>
     <div class="hero-buttons fade-up fade-up-3">
       <a href="#projects" class="btn-primary">See My Work ↓</a>
-      <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/Anjeet_Yadav_Resume.pdf" target="_blank" class="btn-secondary">Download Resume ↗</a>
+      <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/AnjeetYadav_resume.pdf" target="_blank" class="btn-secondary">Download Resume ↗</a>
     </div>
     <div class="hero-stats fade-up fade-up-4">
       <div class="stat-item">
@@ -545,22 +559,26 @@
 
   <div class="hero-visual">
     <div class="photo-wrap">
-      <div class="photo-bg"></div>
-      <div class="photo-frame">
-        <!-- Try common filenames for photo in the repo -->
-        <img
-          src="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/photo.jpg"
-          onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/profile.jpg'"
-          alt="Anjeet Yadav"
-          style="width:100%;height:100%;object-fit:cover;object-position:top;"
-        />
+      <!-- Label strip above photo -->
+      <div class="photo-label-strip">
+        <span class="photo-label-role">Data Analyst</span>
+        <span class="photo-label-loc">Bengaluru, India</span>
       </div>
-      <div class="photo-badge">
-        <div class="badge-icon">📊</div>
-        <div class="badge-text">
-          <strong>Data Analyst</strong>
-          <span>Bengaluru, India</span>
-        </div>
+      <!-- Photo frame -->
+      <div class="photo-frame">
+        <img
+          src="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/Anjeet_photo.jpg"
+          alt="Anjeet Yadav"
+        />
+        <div class="photo-frame-accent"></div>
+      </div>
+      <!-- Skill tags below photo -->
+      <div class="photo-skills-row">
+        <span class="photo-skill-tag">SQL</span>
+        <span class="photo-skill-tag">Power BI</span>
+        <span class="photo-skill-tag">Python</span>
+        <span class="photo-skill-tag">Tableau</span>
+        <span class="photo-skill-tag">Excel</span>
       </div>
     </div>
   </div>
@@ -879,13 +897,66 @@
 <section id="certificate">
   <div class="cert-showcase">
     <div class="cert-image-wrap">
-      <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/internship_certificate.jpg" target="_blank">
-        <img
-          src="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/internship_certificate.jpg"
-          onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/certificate.jpg'"
-          alt="Internship Certificate — Eesasssin Technologies"
-          style="width:100%;height:auto;display:block;"
-        />
+      <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/Anjeet_Intern_Certificate.pdf" target="_blank" style="text-decoration:none;">
+        <div style="
+          position:relative; z-index:1;
+          background: linear-gradient(135deg, #0f2a1e 0%, #1a4a30 50%, #0f2a1e 100%);
+          border-radius: 16px;
+          border: 1px solid rgba(45,157,110,0.3);
+          padding: 3rem 2.5rem;
+          min-height: 380px;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          gap: 1.5rem; text-align: center;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+          transition: transform 0.2s, box-shadow 0.2s;
+          cursor: pointer;
+        "
+        onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.22)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.15)'"
+        >
+          <!-- Decorative border lines -->
+          <div style="position:absolute;inset:12px;border:1px solid rgba(45,157,110,0.2);border-radius:10px;pointer-events:none;"></div>
+          <!-- Seal -->
+          <div style="
+            width: 80px; height: 80px; border-radius: 50%;
+            background: rgba(26,107,74,0.25);
+            border: 2px solid rgba(45,157,110,0.5);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem;
+          ">🏅</div>
+          <!-- Issuer -->
+          <div>
+            <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(45,157,110,0.8);font-weight:700;margin-bottom:0.5rem;">Certificate of Completion</p>
+            <p style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:0.4rem;">Data Analyst Intern</p>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.5);">Eesasssin Technologies Pvt. Ltd.</p>
+          </div>
+          <!-- Divider -->
+          <div style="width:60px;height:2px;background:linear-gradient(90deg,transparent,rgba(45,157,110,0.7),transparent);"></div>
+          <!-- Meta -->
+          <div style="display:flex;gap:2rem;">
+            <div>
+              <p style="font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:3px;">Recipient</p>
+              <p style="font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.85);">Anjeet Yadav</p>
+            </div>
+            <div>
+              <p style="font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:3px;">Period</p>
+              <p style="font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.85);">Aug — Nov 2025</p>
+            </div>
+          </div>
+          <!-- CTA -->
+          <div style="
+            display:inline-flex;align-items:center;gap:8px;
+            background:rgba(26,107,74,0.4);
+            border:1px solid rgba(45,157,110,0.5);
+            color:#4dd999;
+            padding:0.55rem 1.4rem;border-radius:40px;
+            font-size:0.82rem;font-weight:600;letter-spacing:0.03em;
+            margin-top:0.5rem;
+          ">
+            <span>View Full Certificate</span>
+            <span style="font-size:1rem;">↗</span>
+          </div>
+        </div>
       </a>
     </div>
     <div class="cert-info">
@@ -926,17 +997,9 @@
   <h2 class="section-title" style="max-width:600px;">Let's Build Something<br>Data-Driven</h2>
   <p class="section-sub" style="max-width:520px;">I'm actively looking for Data Analyst roles at companies that take data seriously. If that's you — let's talk.</p>
   <div class="contact-links">
-    <a href="mailto:anjeetyadav887@gmail.com" class="contact-link primary">✉ Email Me</a>
+    <a href="/cdn-cgi/l/email-protection#7617181c1313020f171217004e4e4136111b171f1a5815191b" class="contact-link primary">✉ Email Me</a>
     <a href="https://linkedin.com/in/anjeet-yadav-573970227" target="_blank" class="contact-link">in LinkedIn</a>
     <a href="https://github.com/anjeetyadav" target="_blank" class="contact-link">⌥ GitHub</a>
-    <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/Anjeet_Yadav_Resume.pdf" target="_blank" class="contact-link">↓ Resume PDF</a>
+    <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/AnjeetYadav_resume.pdf" target="_blank" class="contact-link">↓ Resume PDF</a>
   </div>
-  <p class="contact-email"><a href="mailto:anjeetyadav887@gmail.com">anjeetyadav887@gmail.com</a></p>
-</section>
-
-<footer>
-  Built with precision by Anjeet Yadav · 2026 · Bengaluru, India
-</footer>
-
-</body>
-</html>
+  <p class="contact-email"><a href="/cdn-cgi/l/email-protection#bddcd3d7d8d8c9c4dcd9dccb85858afddad0dcd4d193ded2d0"><span class="__cf_email__" data-cfemail="b6d7d8dcd3d3c
