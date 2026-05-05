@@ -129,25 +129,68 @@
   .stat-item{}
   .stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;color:var(--cyan);line-height:1;}
   .stat-label{font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+
+  /* ── PHOTO WRAP — CHANGE 1: removed .photo-tags, added .photo-identity-bar ── */
   .hero-photo-wrap{
     position:relative;flex-shrink:0;
   }
   .photo-frame{
-    width:280px;height:340px;border-radius:16px;overflow:hidden;
-    border:1px solid var(--border);
+    width:280px;height:340px;border-radius:16px 16px 0 0;overflow:hidden;
+    border:1px solid var(--border);border-bottom:none;
     box-shadow:0 0 60px rgba(0,229,255,0.1);
     position:relative;
   }
-  .photo-frame img{width:100%;height:100%;object-fit:cover;}
-  .photo-tags{
-    position:absolute;bottom:-1rem;left:-1rem;
-    display:flex;flex-direction:column;gap:0.4rem;
+  .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;}
+
+  /* Identity bar sits flush below photo — no text on the image */
+  .photo-identity-bar{
+    width:280px;
+    background:rgba(8,21,43,0.97);
+    border:1px solid var(--border);
+    border-top:1px solid rgba(0,229,255,0.25);
+    border-radius:0 0 16px 16px;
+    padding:0.85rem 1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:0.75rem;
+    backdrop-filter:blur(12px);
   }
-  .photo-tag{
-    background:rgba(5,13,26,0.95);border:1px solid var(--border);
-    padding:0.3rem 0.7rem;border-radius:6px;font-size:0.75rem;
-    color:var(--cyan);font-family:'JetBrains Mono',monospace;
-    backdrop-filter:blur(8px);
+  .pib-left{}
+  .pib-name{
+    font-size:0.88rem;font-weight:600;color:#fff;
+    letter-spacing:0.02em;line-height:1.2;
+  }
+  .pib-role{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;color:var(--cyan);
+    margin-top:0.15rem;letter-spacing:0.06em;
+  }
+  .pib-location{
+    display:flex;align-items:center;gap:0.3rem;
+    font-size:0.68rem;color:var(--text-muted);
+    margin-top:0.2rem;
+  }
+  .pib-right{
+    display:flex;flex-direction:column;align-items:flex-end;gap:0.35rem;
+    flex-shrink:0;
+  }
+  .pib-avail{
+    display:flex;align-items:center;gap:0.35rem;
+    background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.25);
+    border-radius:999px;padding:0.2rem 0.55rem;
+    font-size:0.62rem;font-weight:600;letter-spacing:0.08em;
+    color:var(--cyan);white-space:nowrap;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .pib-avail-dot{
+    width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    animation:pulse 2s infinite;flex-shrink:0;
+  }
+  .pib-hr{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.62rem;color:var(--gold);
+    letter-spacing:-0.5px;
   }
 
   /* ── SECTION HEADERS ── */
@@ -325,17 +368,25 @@
   .contact-card::before{
     content:'';position:absolute;inset:0;
     background:radial-gradient(circle at 50% 0%,rgba(0,229,255,0.06),transparent 60%);
+    pointer-events:none;
   }
   .contact-title{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;letter-spacing:0.03em;color:#fff;margin-bottom:0.75rem;}
   .contact-sub{color:var(--text-muted);font-size:1rem;margin-bottom:2.5rem;font-weight:300;}
+
+  /* ── CONTACT LINKS — CHANGE 2: proper href on every icon link ── */
   .contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
   .contact-link{
-    display:flex;align-items:center;gap:0.5rem;padding:0.7rem 1.4rem;
+    display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1.4rem;
     border:1px solid var(--border);border-radius:8px;
     color:var(--text);text-decoration:none;font-size:0.88rem;
     background:rgba(255,255,255,0.03);transition:all 0.25s;
   }
   .contact-link:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-dim);}
+  .contact-link svg{
+    width:16px;height:16px;flex-shrink:0;
+    stroke:currentColor;fill:none;stroke-width:1.8;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
 
   /* ── FOOTER ── */
   footer{
@@ -350,7 +401,7 @@
   /* ── RESPONSIVE ── */
   @media(max-width:900px){
     .hero-grid{grid-template-columns:1fr;gap:3rem;}
-    .hero-photo-wrap{order:-1;display:flex;justify-content:center;}
+    .hero-photo-wrap{order:-1;display:flex;flex-direction:column;align-items:center;}
     .skills-grid{grid-template-columns:repeat(2,1fr);}
     .projects-grid{grid-template-columns:1fr;}
     .certs-grid{grid-template-columns:repeat(2,1fr);}
@@ -410,15 +461,30 @@
           <div class="stat-item"><div class="stat-num">★★★★★</div><div class="stat-label">HackerRank SQL</div></div>
         </div>
       </div>
+
+      <!-- CHANGE 1: photo-tags removed from image overlay → identity bar below photo -->
       <div class="hero-photo-wrap">
         <div class="photo-frame">
           <img src="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/Anjeet_photo.jpg" alt="Anjeet Yadav" loading="lazy"/>
         </div>
-        <div class="photo-tags">
-          <span class="photo-tag">📍 Bengaluru, India</span>
-          <span class="photo-tag">💼 Data Analyst</span>
+        <div class="photo-identity-bar">
+          <div class="pib-left">
+            <div class="pib-name">Anjeet Yadav</div>
+            <div class="pib-role">Data Analyst</div>
+            <div class="pib-location">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Bengaluru, India
+            </div>
+          </div>
+          <div class="pib-right">
+            <span class="pib-avail"><span class="pib-avail-dot"></span>Available</span>
+            <span class="pib-hr">★★★★★ HR</span>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -664,6 +730,7 @@
 </section>
 
 <!-- ── CONTACT ── -->
+<!-- CHANGE 2: all four contact-link anchors now have proper working href values -->
 <section id="contact">
   <div class="container">
     <div class="section-label" style="justify-content:center;">Open to Opportunities</div>
@@ -671,10 +738,31 @@
       <h2 class="contact-title">Let's Build Something Data-Driven</h2>
       <p class="contact-sub">I'm actively looking for Data Analyst roles at companies that take data seriously. If that's you — let's talk.</p>
       <div class="contact-links">
-        <a href="mailto:anjeetyadav887@gmail.com" class="contact-link">✉ Email Me</a>
-        <a href="https://linkedin.com/in/anjeet-yadav-573970227" class="contact-link" target="_blank">in LinkedIn</a>
-        <a href="https://github.com/anjeetyadav" class="contact-link" target="_blank">⌥ GitHub</a>
-        <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/AnjeetYadav_resume.pdf" class="contact-link" target="_blank">↓ Resume PDF</a>
+
+        <!-- Email -->
+        <a href="mailto:anjeetyadav887@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email Me
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com/in/anjeet-yadav-573970227" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/anjeetyadav" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+
+        <!-- Resume PDF -->
+        <a href="https://raw.githubusercontent.com/anjeetyadav/anjeetyadav.github.io/main/AnjeetYadav_resume.pdf" class="contact-link" target="_blank" rel="noopener noreferrer" download>
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume PDF
+        </a>
+
       </div>
     </div>
   </div>
@@ -714,7 +802,6 @@
 
   function draw(){
     ctx.clearRect(0,0,W,H);
-    // draw connections
     for(let i=0;i<N;i++){
       for(let j=i+1;j<N;j++){
         const dx=particles[i].x-particles[j].x;
@@ -731,13 +818,11 @@
         }
       }
     }
-    // draw nodes
     for(const p of particles){
       ctx.beginPath();
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
       ctx.fillStyle='rgba(0,229,255,0.5)';
       ctx.fill();
-      // move
       p.x+=p.vx;p.y+=p.vy;
       if(p.x<0||p.x>W) p.vx*=-1;
       if(p.y<0||p.y>H) p.vy*=-1;
